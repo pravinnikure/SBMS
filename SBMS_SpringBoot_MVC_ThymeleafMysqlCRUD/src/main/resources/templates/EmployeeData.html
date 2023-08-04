@@ -1,0 +1,46 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+	<title> Data Page </title>
+</head>
+
+<body>
+	<pre>>
+		<h2> Employee Data Page </h2>
+
+		<table border="1">
+
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>GENDER</th>
+				<th>DEPT</th>
+				<th>SALARY</th>
+				<th>ADDRESS</th>
+				<th>OPERATIONS</th>
+			</tr>
+			
+			</pre>
+			<tr th:each="ob:${list}">
+				<td>[[${ob.empId}]]</td>
+				<td>[[${ob.empName}]]</td>
+				<td>[[${ob.empGen}]]</td>
+				<td>[[${ob.empDept}]]</td>
+				<td>[[${ob.empSal}]]</td>
+				<td>[[${ob.empAdd}]]</td> 
+				
+				<td>
+				<!--- Request param at runtime    -->
+
+					 <a th:href="@{/employee/delete(id=${ob.empId})}">DELETE</a> |
+					 <a th:href="@{/employee/edit(id=${ob.empId})}">EDIT</a>  
+				
+				</td>
+				
+			</tr>		
+		</table>
+		[[${message}]]
+	
+</body>
+
+</html>

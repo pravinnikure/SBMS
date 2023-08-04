@@ -1,0 +1,106 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.example.demo.entity.Employee;
+import com.example.demo.exceptions.EmployeeNorFoundException;
+import com.example.demo.service.EmployeeServiceImpl;
+
+@Controller
+@RequestMapping("/employee")
+public class EmployeeController {
+	@Autowired
+	EmployeeServiceImpl service;
+
+	// 1. Display Register page
+
+	@GetMapping("/register")
+	public String showRegister() {
+		return "EmployeeRegister";
+	}
+
+	// 2 Read d=form data and insert in to DB
+	@PostMapping("/save")
+	public String saveForm(@ModelAttribute Employee employee, Model model) {
+		Integer id = service.saveEmployee(employee);
+
+		String message = "Employee " + id + " Create";
+
+		model.addAttribute("message", message);
+		return "EmployeeRegister";
+	}
+
+	// Get all rows from DB and display as HTML form
+	@GetMapping("all")
+	public String showAll(@RequestParam(required = false) String message, Model model) {
+		// fetch daat from DB using service
+		List<Employee> list = service.getAllEmployee();
+
+		// send data to UI
+		model.addAttribute("list", list);
+
+		model.addAttribute("message", message);
+		// goto UI page
+		return "EmployeeData";
+
+	}
+
+	// Delete employe by ID
+	@GetMapping("/delete")
+	public String doDelete(@RequestParam Integer id, RedirectAttributes attributes) {
+		try {
+			// perform delete operations
+			service.deleteEmployee(id);
+			// send message to all
+			attributes.addAttribute("message", "Employee '" + id + "'Deleted ");
+			// redirect
+
+		} catch (EmployeeNorFoundException e) {
+			e.printStackTrace();
+			attributes.addAttribute("message", e.getMessage());
+
+		}
+		return "redirect:all";
+	}
+
+	// Show data in edit page
+	@GetMapping("/edit")
+	public String editPage(@RequestParam Integer id, Model model) {
+		String page = null;
+		try {
+			// Data from DB
+			Employee emp = service.getOneEmployee(id);
+
+			model.addAttribute("emp", emp);
+
+			page = "EmployeeEdit";
+
+		} catch (EmployeeNorFoundException e) {
+			e.printStackTrace();
+			model.addAttribute("message", e.getMessage());
+			page = "redirect:all";
+		}
+		return page;
+	}
+
+	// 6 Update on edit form
+	@PostMapping("/update")
+	public String updateForm(@ModelAttribute Employee employee, RedirectAttributes attributes) {
+		// Update form data
+
+		service.updateEmployee(employee);
+		attributes.addAttribute("message", "Employee'"+ employee.getEmpId() +"' Updated Successfully ");
+		return "redirect:all";
+	}
+}

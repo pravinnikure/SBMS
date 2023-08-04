@@ -1,0 +1,14 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+	<title> Book TH Example	</title>
+	<link th:href="@{/css/bookpage.css}" rel="stylesheet"/>	
+	
+	<script type="text/javascript" th:src="@{/js/bookdata.js}"> </script>
+<body>
+	<img th:src="@{/images/pravin2.jpg}" width="10%", height="25%">
+	<h1 class="mdeg">Data is [[ ${message} ]] </h1>
+	
+	<div th:text= "${message}"></div>
+	
+	<a th:href="@{/data}">Go to Home Page</a>
+</body>
+</thml>
