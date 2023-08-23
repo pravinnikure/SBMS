@@ -1,0 +1,8 @@
+package snippet;
+
+public class Snippet {
+	public static void main(String[] args) {
+			data1.stream().map(e -> e[0] + " " + e[1]).forEach(System.out::println);
+	}
+}
+

@@ -1,0 +1,10 @@
+package snippet;
+
+public class Snippet {
+	@Transactional
+		@Modifying
+		@Query("UPDATE Employee E SET E.empSal=:esal WHERE E.empName=:ename")
+		int updateSalByName(Double esal,String ename); // Printing count of rows affected
+	
+}
+

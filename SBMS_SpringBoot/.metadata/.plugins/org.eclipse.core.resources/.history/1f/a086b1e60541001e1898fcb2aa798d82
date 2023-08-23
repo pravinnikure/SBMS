@@ -1,0 +1,5 @@
+package com.app.restapi.costomeexception;
+
+public class ErrorMessage {
+
+}

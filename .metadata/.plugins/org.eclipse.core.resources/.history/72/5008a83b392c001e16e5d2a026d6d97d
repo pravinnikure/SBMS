@@ -1,0 +1,27 @@
+package com.app.prav.generators;
+
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
+
+import org.hibernate.HibernateException;
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
+import org.hibernate.id.IdentifierGenerator;
+
+public class MyCostomFenerators implements IdentifierGenerator {
+
+	@Override
+	public Serializable generate(SharedSessionContractImplementor session, Object object) throws HibernateException {
+		// TODO Auto-generated method stub
+	
+		SimpleDateFormat sdf = new SimpleDateFormat("ddmmyy");
+		String dte = sdf.format(new Date());
+
+		int rand = Math.abs(new Random().nextInt());
+		
+		
+		return "EMP:"+ dte + rand;
+	}
+
+}

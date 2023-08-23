@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-jpa=16
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.lombok=18
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.mysql=16
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=SBMS_Spring_Boot_DataJpaGenerator
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=2.7.15-SNAPSHOT
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.description=Projects for DATA JPA Generators
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.groupId=com.pravin
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.javaVersion=1.8
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.language=java
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.name=SBMS_Spring_Boot_DataJpaGenerator
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packageName=com.app.prav
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packaging=jar
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.type=MAVEN
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.version=0.0.1-SNAPSHOT
+org.springframework.ide.eclipse.boot.wizard.initializr.url=https\://start.spring.io\n

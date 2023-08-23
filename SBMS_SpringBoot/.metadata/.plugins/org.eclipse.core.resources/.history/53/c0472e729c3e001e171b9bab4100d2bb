@@ -1,0 +1,5 @@
+package com.app.restapi.services;
+
+public class BookService {
+
+}

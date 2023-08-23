@@ -1,0 +1,5 @@
+package com.app.restapi.repo;
+
+public class StudentRepository {
+
+}

@@ -1,0 +1,35 @@
+my:
+  app:
+    DBName: mySqlDefault
+    password: pass123Default
+    url: mysql.oracle.db.Default
+    username: user1Default
+    
+---
+my:
+  app:
+    DBName: mySqlQA
+    password: pass123QA
+    url: mysql.oracle.db.QA
+    username: user1QA
+spring:
+  config:
+    activate:
+      on-profile:
+      - QA
+      
+---
+
+my:
+  app:
+    DBName: mySqlQA
+    password: pass123QA
+    url: mysql.oracle.db.QA
+    username: user1QA
+spring:
+  config:
+    activate:
+      on-profile:
+      - dev
+
+

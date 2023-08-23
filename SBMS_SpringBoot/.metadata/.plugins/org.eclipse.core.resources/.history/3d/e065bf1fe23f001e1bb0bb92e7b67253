@@ -1,0 +1,40 @@
+package com.app.restapi.impl;
+
+import java.util.List;
+
+import com.app.restapi.entity.Student;
+import com.app.restapi.service.IStudentService;
+
+public class IStudentServiceImpl implements IStudentService {
+
+	@Override
+	public Integer saveStudent(Student student) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Student> getAllStudent(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Student getOneStudent(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteStudent(Integer id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void updateStudent(Student student) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

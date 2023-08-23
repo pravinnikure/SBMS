@@ -1,0 +1,18 @@
+package com.app.restapi.service;
+
+import com.app.restapi.entity.Student;
+
+public interface IStudentService 
+{
+	
+	Integer saveStudent(Student student);
+	
+	getAllStudent();
+	
+	getOneStudent();
+	
+	void deleteStudent(Integer id);
+	
+	void updateStudent(Student student);
+
+}

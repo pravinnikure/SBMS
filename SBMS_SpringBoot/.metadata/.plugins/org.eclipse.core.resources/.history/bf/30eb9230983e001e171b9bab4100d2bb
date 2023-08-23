@@ -1,0 +1,16 @@
+package com.app.restapi.controller;
+
+import org.springframework.http.HttpEntity;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class TemplateController 
+{
+
+	public String getRestTemplateData(String s1)
+	{
+		HttpEntity<String> httpEntity = new HttpEntity<>(s1);
+		
+		return null;
+	}
+}

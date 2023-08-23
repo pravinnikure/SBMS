@@ -1,0 +1,26 @@
+package com.app.restapi.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.app.restapi.entity.Student;
+import com.app.restapi.impl.IStudentServiceImpl;
+
+@RestController
+public class StudentRestController 
+{
+	
+	@Autowired
+	IStudentServiceImpl service;
+	
+	
+	public ResponseEntity<String> saveStudent(Student student)
+	{
+		
+		Integer id =  service.saveStudent(student);
+		return id;
+	}
+	
+
+}

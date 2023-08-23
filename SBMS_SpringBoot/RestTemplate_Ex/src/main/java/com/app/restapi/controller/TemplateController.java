@@ -1,0 +1,25 @@
+package com.app.restapi.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.app.restapi.service.TemplateService;
+
+@RestController
+public class TemplateController 
+{
+	
+	@Autowired
+	public TemplateService templateService;
+	
+	@PostMapping("/template")
+	public ResponseEntity<String> getRestResponse(String str1)
+	{
+		System.out.println("Calling another rest service");
+		return templateService.getRestTemplateData(str1);
+	}
+}
