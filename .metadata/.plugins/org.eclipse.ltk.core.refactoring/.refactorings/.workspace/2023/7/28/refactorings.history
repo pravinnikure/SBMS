@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;SBMS_Spring_DATAJPA_CollectionMapping-1&apos; to &apos;SBMS_Spring_DATAJPA_AssociationMapping&apos;&#x0D;&#x0A;- Original element: &apos;SBMS_Spring_DATAJPA_CollectionMapping-1&apos;&#x0D;&#x0A;- Renamed element: &apos;SBMS_Spring_DATAJPA_CollectionMapping-1&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;SBMS_Spring_DATAJPA_CollectionMapping-1&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=SBMS_Spring_DATAJPA_CollectionMapping-1" name="SBMS_Spring_DATAJPA_AssociationMapping" references="true" stamp="1688985247493" version="1.0"/>
+</session>

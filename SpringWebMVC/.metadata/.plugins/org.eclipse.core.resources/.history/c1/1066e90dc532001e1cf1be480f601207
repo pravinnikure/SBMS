@@ -1,0 +1,32 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+	<title> Edit Page </title>
+</head>
+
+<body>
+	<pre>
+		<h3> Employee Edit Page </h3>
+		<form th:action="@{/employee/update}" method="POST" th:object="${emp}">
+
+			ID: <input type="text" th:field="*{empId}" readonly />
+			NAME:<input type="text" th:field="*{empName}" />
+
+			GENDER: <input type="radio" th:field="*{empGen}" value="Male" />Male<input type="radio" th:field="*{empGen}"
+				value="Female" />Female
+			DEPT: <select th:field="*{empDept}">
+				<option value="">-SELECT-</option>
+				<option value="DEV">DEV</option>
+				<option value="QA">QA</option>
+				<option value="BA">BA</option>
+			</select>
+			SALARY: <input type="text" th:field="*{empSal}" />
+			ADDRESS: <textarea th:field="*{empAdd}"></textarea>
+
+			<input type="submit" value="update">
+		</form>
+	</pre>
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+package com.app.restapi.costomeexception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import com.app.restapi.exceptions.StudentNotFoundException;
+
+@RestControllerAdvice
+public class SNFEXception 
+{
+	
+	public ResponseEntity<String> showSNFEXception(StudentNotFoundException e)
+	{
+		return new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+		
+	}
+
+}

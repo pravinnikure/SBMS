@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;springMVC/src/main/webapp/WEB-INF/mypages/home.jsp&apos; to &apos;Home.jsp&apos;" description="Rename resource &apos;home.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/mypages/home.jsp" name="Home.jsp" stamp="1690708061349" updateReferences="true"/>
+</session>

@@ -1,0 +1,25 @@
+package com.app.restapi.costomeexception;
+
+import lombok.Data;
+
+@Data
+public class ErrorMessage 
+{
+	
+	private String meassage;
+	private String module;
+	private String code;
+	private String date;
+	public ErrorMessage() {
+		super();
+	}
+	public ErrorMessage(String meassage, String module, String code, String date) {
+		super();
+		this.meassage = meassage;
+		this.module = module;
+		this.code = code;
+		this.date = date;
+	}
+	
+
+}

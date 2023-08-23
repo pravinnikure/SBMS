@@ -1,0 +1,5 @@
+package com.app.restapi.controller;
+
+public class StudentRestController {
+
+}

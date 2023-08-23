@@ -1,0 +1,5 @@
+package com.app.restapi.beans;
+
+public class TemplateBeans {
+
+}
