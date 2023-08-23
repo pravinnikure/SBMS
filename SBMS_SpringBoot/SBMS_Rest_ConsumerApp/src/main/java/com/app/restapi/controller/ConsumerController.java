@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -65,8 +66,10 @@ public class ConsumerController {
 
 		HttpEntity<String> requestBody = new HttpEntity<String>(body, header);
 
-		ResponseEntity<String> response = restTemplate.postForEntity(url, requestBody, String.class);
+		//ResponseEntity<String> response = restTemplate.postForEntity(url, requestBody, String.class);
 
+		ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, requestBody, String.class);
+		
 		return response;
 
 	}
