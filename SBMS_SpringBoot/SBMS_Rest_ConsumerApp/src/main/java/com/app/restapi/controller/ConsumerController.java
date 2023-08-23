@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -73,5 +75,48 @@ public class ConsumerController {
 		return response;
 
 	}
+	
+	
+	@PutMapping("/updateStudent")
+	private ResponseEntity<String> updateStudent(@RequestBody Student s1) {
+		
+		String url = "http://localhost:8081/v1/api/student/modify";
+		
+		String body = "{\r\n"
+				+ "    \"stdId\":10,\r\n"
+				+ "    \"stdName\":\"Shalini\",\r\n"
+				+ "    \"stdGen\":\"Female\",\r\n"
+				+ "    \"stdCourse\":\"Mechanical\",\r\n"
+				+ "    \"stdAdd\":\"SA 994554\"\r\n"
+				+ "}";
+		
+		org.springframework.http.HttpHeaders header = new org.springframework.http.HttpHeaders();
+
+		header.setContentType(org.springframework.http.MediaType.APPLICATION_JSON);
+
+		HttpEntity<String> requestBody = new HttpEntity<String>(body, header);
+
+		//ResponseEntity<String> response = restTemplate.postForEntity(url, requestBody, String.class);
+
+		ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.PUT, requestBody, String.class);
+		
+		return response;
+
+	}
+	
+	
+	
+	
+	@DeleteMapping("/deleteStudent")
+	private ResponseEntity<String> removeStudent() {
+		String url = "http://localhost:8081/v1/api/student/remove/{id}";
+
+		ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.DELETE, null, String.class,8);
+																							// inputs , separated
+
+		return response;
+
+	}
+
 
 }
